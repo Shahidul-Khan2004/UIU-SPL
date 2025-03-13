@@ -2,10 +2,9 @@
 
 int main (void) {
     int n;
-    float sum;
+    float sum, num;
     scanf("%d", &n);
     for (int i = 0; i < n; i++) {
-        float num;
         scanf("%f", &num);
         sum += num;
     }
