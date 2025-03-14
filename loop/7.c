@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main (void) {
-    char input[100];
     /* simple version
+    char input;
     for (int i = 1; ; i++)
     {
         scanf(" %c", &input);
@@ -10,6 +10,7 @@ int main (void) {
         else break;
     }
     */
+   char input[100];
    int n = 0;
    do
    {
