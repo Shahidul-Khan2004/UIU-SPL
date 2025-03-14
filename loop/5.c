@@ -13,6 +13,6 @@ int main (void) {
     }
     while (x == y) {
         printf("Reached!");
-        x++;
+        break;
     }
 }
