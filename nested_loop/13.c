@@ -7,8 +7,12 @@ int main (void) {
         for (int j = 1; j <= n; j++) {
             (j <= i) ? printf("%d", j) : printf("_");
         }
-        for (int k = 1; k <= n - 1; k++) {
-            (k < n - i) ? printf("_") : printf("%d", k);
+        for (int k = 1, j = 1; k <= n - 1; k++) {
+            if (k < n - i)  printf("_") ;
+            else {
+                printf("%d", j);
+                j++;
+            }
         }
         printf("\n");
     }

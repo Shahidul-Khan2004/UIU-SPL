@@ -32,4 +32,25 @@ int main (void) {
     }
     variance = sumf / size;
     float std_daviation = sqrt(variance);
+    
+    /*int arr[10] = {1, 2, 3, 4, 5, 60, 7, 8, 90, 9};
+    int largest, second_largest;
+    largest = arr[0];
+    int index = 0;
+    for (int i = 1; i < 10; i++) {
+        if (arr[i] > largest) {
+            largest = arr[i];
+            index = i;
+        }
+    }
+    for (int i = index; i < 10 - 1; i++) {
+        arr[i] = arr[i + 1];
+    }
+    second_largest = arr[0];
+    for (int i = 1; i < 10 - 1; i++) {
+        if (arr[i] > second_largest) {
+            second_largest = arr[i];
+        }
+    }
+    printf("%d", second_largest);*/
 }
