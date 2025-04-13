@@ -8,11 +8,7 @@ int main (void) {
             (j <= i) ? printf("%d", j) : printf("_");
         }
         for (int k = 1, j = 1; k <= n - 1; k++) {
-            if (k < n - i)  printf("_") ;
-            else {
-                printf("%d", j);
-                j++;
-            }
+            (k < n - i) ? printf("_") : printf("%d", j), j++;
         }
         printf("\n");
     }
