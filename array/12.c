@@ -11,7 +11,7 @@ int main (void) {
     scanf("%d", &num);
     printf("position: ");
     scanf("%d", &pos);
-    for (int i = n; i >= pos; i--) arr[i + 1] = arr[i];
+    for (int i = n - 1; i >= pos; i--) arr[i + 1] = arr[i];
     arr[pos] = num;
     for (int i = 0; i < n + 1; i++) {
         printf("%d ", arr[i]);
