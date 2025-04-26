@@ -110,5 +110,34 @@ int main (void) {
     // for (int i = n; i > 1; i--) factorial *= i;
     // printf("%d", factorial);
 
-    
+    // int a = 5 != 6? -1.2 : 0.3;
+    // int b = 1 + a--;
+
+    // if (!b--) 
+    //     printf("Inside First IF\n");
+
+    // printf("a = %d and b = %d\n", a, b);
+
+    // if (a * b > 0 && b - a > 0)
+    //     printf("Inside Second IF\n");
+    // else if (a * b < 0)
+    //     printf("Inside ELSE IF\n");
+    // else 
+    //     printf("Inside ELSE\n");
+
+    // int n = 5;
+
+    // for (int i = 1, num = 0; i <= n; i++, num++) {
+    //     for (int j = 1; j <= n - i; j++) printf(" ");
+    //     for (int k = 1; k <= i; k++) {
+    //         printf("%d", num);
+    //         num--;
+    //     }
+    //     num++;
+    //     for (int l = 2; l <= i; l++) {
+    //         num++;
+    //         printf("%d", num);
+    //     }
+    //     printf("\n");
+    // }
 }
