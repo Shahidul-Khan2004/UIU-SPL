@@ -32,9 +32,9 @@ int cmp_str_word (char word[], char str[], int beginning_word, int end_word) {
     while(word[word_len] != 0) word_len++;
     for (int i = beginning_word; i < end_word; i++) frag_len++;
     if (word_len != frag_len) return 0;
+    int flag = 1;
     for (int j = 0, k = beginning_word; word[j] != 0 && k < end_word; j++, k++) {
-        if (str[k] == word[j]) matched++;
+        if (str[k] != word[j]) flag = 0;
     }
-    if (word_len == matched) return 1;
-    else return 0;
+    return flag;
 }
