@@ -28,9 +28,13 @@ int occurrence_of_word(char str[], char word[]) {
 }
 
 int cmp_str_word (char word[], char str[], int beginning_word, int end_word) {
-    int flag = 1;
+    int word_len = 0, frag_len = 0, matched = 0;
+    while(word[word_len] != 0) word_len++;
+    for (int i = beginning_word; i < end_word; i++) frag_len++;
+    if (word_len != frag_len) return 0;
     for (int j = 0, k = beginning_word; word[j] != 0 && k < end_word; j++, k++) {
-        if (str[k] != word[j]) flag = 0;
+        if (str[k] == word[j]) matched++;
     }
-    return flag;
+    if (word_len == matched) return 1;
+    else return 0;
 }
