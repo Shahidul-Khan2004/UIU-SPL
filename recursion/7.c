@@ -1,10 +1,9 @@
 #include <stdio.h>
 
-int palindrome (char str[], int start, int end) {
-    if (start == end) return 1;
+int palindrome(char str[], int start, int end) {
+    if (start >= end) return 1;
     if (str[start] != str[end]) return 0;
-    else if (start - end == 1) return 1;
-    palindrome(str, start + 1, end - 1);
+    return palindrome(str, start + 1, end - 1);
 }
 
 int main (void) {
