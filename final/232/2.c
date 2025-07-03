@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 struct Employee {
     int id;
@@ -27,7 +28,9 @@ int main (void) {
             addEmployee(EmployeeList, p);
         }
         if (choice == 2) {
-
+            char name[64];
+            struct Employee *updated = updateEmployeeInfo(EmployeeList, numEmployee, name);
+            if (updated == (EmployeeList + numEmployee)) numEmployee++;
         }
         if (choice == 3) {
             struct Employee *ptr = EmployeeList;
@@ -58,5 +61,22 @@ void displayEmployee(struct Employee *Employee_ptr) {
     printf("\nage: %d", Employee_ptr->age);
 }
 struct Employee* updateEmployeeInfo(struct Employee *EmployeeList, int numEmployees, char *EmployeeName) {
-    
+    printf("\nName: ");
+    scanf(" %[^\n]", EmployeeName);
+    int flag = 0;
+    for (int i = 0; i < numEmployees; i++) {
+        if(strcmp((EmployeeList + i)->name, EmployeeName) == 0) {
+            printf("\nEmployee Found!");
+            flag = 1;
+            printf("\nEnter Age: ");
+            scanf("%d", &(EmployeeList + i)->age);
+            return &EmployeeList[i];
+        }
+    }
+    if (flag == 0) {
+        printf("\nEmployee not found!");
+        strcpy((EmployeeList + numEmployees)->name, EmployeeName);
+        EmployeeList[numEmployees].id = numEmployees + 1;
+        return &EmployeeList[numEmployees];
+    }
 }
