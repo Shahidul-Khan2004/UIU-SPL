@@ -47,11 +47,11 @@ int main (void) {
 
 void addEmployee(struct Employee *EmployeeList, int *numEmployees) {
     printf("id: ");
-    scanf("%d", &(*(EmployeeList + *numEmployees)).id);//&EmployeeList[*numEmployees].id
+    scanf("%d", &EmployeeList[*numEmployees].id);//&EmployeeList[*numEmployees].id
     printf("name: ");
-    scanf(" %[^\n]", (EmployeeList + *numEmployees)->name);
+    scanf(" %[^\n]", EmployeeList[*numEmployees].name);
     printf("age: ");
-    scanf("%d", &(EmployeeList + *numEmployees)->age);
+    scanf("%d", &EmployeeList[*numEmployees].age);
     (*numEmployees)++;
 }
 
@@ -65,17 +65,17 @@ struct Employee* updateEmployeeInfo(struct Employee *EmployeeList, int numEmploy
     scanf(" %[^\n]", EmployeeName);
     int flag = 0;
     for (int i = 0; i < numEmployees; i++) {
-        if(strcmp((EmployeeList + i)->name, EmployeeName) == 0) {
+        if(strcmp(EmployeeList[i].name, EmployeeName) == 0) {
             printf("\nEmployee Found!");
             flag = 1;
             printf("\nEnter Age: ");
-            scanf("%d", &(EmployeeList + i)->age);
+            scanf("%d", &EmployeeList[i].age);
             return &EmployeeList[i];
         }
     }
     if (flag == 0) {
         printf("\nEmployee not found!");
-        strcpy((EmployeeList + numEmployees)->name, EmployeeName);
+        strcpy(EmployeeList[numEmployees].name, EmployeeName);
         EmployeeList[numEmployees].id = numEmployees + 1;
         return &EmployeeList[numEmployees];
     }
