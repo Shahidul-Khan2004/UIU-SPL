@@ -1,23 +1,16 @@
 #include <stdio.h> 
-#include <string.h> 
-int main(){ 
-   char str1[20]="CSE-1111 SPL";    
-   char str2[50]="I am a UIUian"; 
-  
-   int i=strlen(str1) * 0.5 - 2; 
- 
-   for(int m=0; i+m<strlen(str1); m+=3){ 
-         str1[i+m]=str2[m]; 
-   }    
- 
-   strcat(str1, str2); 
- 
-   if(strcmp(str2, str1)>0){ 
-     strncat(str1, "CSE is awesome.",6); 
-   } 
-   else{ 
-     strncat(str2, "CSE is awesome.",6); 
-   } 
-   printf("%s\n%s", str1, str2);
-   return 0; 
-}
+void modifyArray(int arr[], int 
+size){ 
+for (int i = 0; i < size; i++){ 
+arr[i] *= 2; 
+} 
+} 
+void main() { 
+int numbers[] = {1, 2, 3, 4, 5}; 
+int *ptr = numbers; 
+modifyArray(ptr, 5); 
+for(int i = 0; i < 5; i++){ 
+*(ptr+i) = *(ptr+i) + i; 
+printf("%d ", *(ptr+i)); 
+} 
+} 
