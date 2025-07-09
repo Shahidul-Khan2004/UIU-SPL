@@ -1,18 +1,15 @@
 #include <stdio.h> 
 #include <string.h> 
  
-int main() { 
-    char A[50] = "Structured"; 
-    char B[50] = "Coding"; 
-    int len = strlen(A); 
-    for (int i=0; i<strlen(B); i++) 
-      A[len-i-1] = B[i]; 
-     
-    strncat(A, B, 2); 
-     
-for (int j=0; j<4; j++) 
-      A[j] = B[strlen(B)-j-1]; 
-    printf("A: %s\n", A); 
-    printf("B: %s\n", B); 
-    return 0; 
-}
+int fun(int *a, int *b){ 
+if (*a > 1)  
+return *a + *b; 
+else  
+return *b - *a; 
+} 
+int main(void) { 
+int x = -10;  
+int y = 20;  
+printf("The result is %d", 
+fun(&x, &y)); 
+} 
