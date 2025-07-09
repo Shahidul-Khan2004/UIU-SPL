@@ -1,15 +1,23 @@
+ 
 #include <stdio.h> 
-void go(int num){ 
-printf("How are you?\n"); 
-if(num==0){ 
-return; 
+int ara[5], x = 20; 
+void change(int p) { 
+   --p; 
+   p--; 
 } 
-num /= 10; 
-go(num); 
-printf("I am fine\n"); 
+void update(int n) { 
+   for(int i = n - 1; i >= 0; i--){ 
+ ara[i] -= x; 
+ change(x); 
+   } 
 } 
-int main(void){ 
-int num = 45633; 
-go(num); 
-return 0; 
-}
+void main() { 
+    int n = 5; 
+    for(int i = 0; i < n; i++){ 
+ ara[i] = (i + 5) * 2; 
+    } 
+    update(n); 
+    for(int i = 0; i < n; i++){ 
+ printf("%d, ", ara[i]); 
+    } 
+} 
