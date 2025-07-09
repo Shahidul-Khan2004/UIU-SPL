@@ -11,7 +11,12 @@ int main (void) {
     }
     // while (fscanf(fp, "%d", &num) != EOF) {
     //     if (num > max) max = num;
+    //     fgetc(fp);
     // }
+    /*while (fscanf(fp, " %[^\n]", str) == 1) {
+    fgetc(fp); // Consume the newline character
+    count++;
+    }*/
     fclose(fp);
     FILE *fp1;
     fp1 = fopen("out.txt", "w");
