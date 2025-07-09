@@ -1,15 +1,17 @@
-#include <stdio.h> 
-#include <string.h> 
-int main() { 
-char str1[50] = "Programming"; 
-char str2[50] = "Languages"; 
-int len = strlen(str1); 
-for (int i = 0; i < strlen(str2); i++) 
-str1[len - i - 1] = str2[i]; 
-strncat(str1, str2, 3); 
-for (int j = 0; j < 5; j++) 
-str1[j] = str2[strlen(str2) - j - 1]; 
-printf("str1: %s\n", str1); 
-printf("str2: %s\n", str2); 
-return 0; 
+#include<stdio.h> 
+#include<string.h> 
+void main() { 
+char data[100] = "Data"; 
+char field[100] = "Science"; 
+int pos; 
+strncpy(data, field, 3); 
+for(pos = 0; data[pos] != '\0'; pos++) 
+data[pos] += 4; 
+strncat(field, data, 2); 
+printf("Data: %s\n", data); 
+field[pos - 1] = '\0'; 
+printf("Field: %s\n", field); 
+for(pos = 2; pos > 0; pos--) 
+strrev(field); 
+printf("Final Output: %s", field); 
 } 
