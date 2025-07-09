@@ -1,18 +1,25 @@
-#include <stdio.h> 
-#include <string.h> 
-int main() { 
-char str1[50] = {'\0'}, str2[50] = "EXCELLENCE"; 
-strcpy(str1, "ACHIEVEMENT"); 
-int i = strlen(str1) * 0.5; 
-for(int k = 0; str2[k] != '\0'; ++k) { 
-str1[i + k] = str2[k]; 
-} 
-strrev(str1); 
-strcat(str1, str2); 
-if(strcmp(str2, str1) >= 0) { 
-strcpy(str1, "STUDY HARD"); 
-} else { 
-strcpy(str2, "NEVER GIVE UP"); 
-} 
-return 0; 
-} 
+#include<stdio.h>  
+int a,b,c=5,d=2;  
+int func1(int a,int b){  
+c=a+b;  
+return c*2;  
+}  
+int func2(int p){  
+p=p+a;  
+a*=2;  
+return p;  
+}  
+void func3(int d){  
+int c=d+10;  
+b=func2(c);  
+}  
+void main(){  
+a=1;b=3;  
+printf("%d %d %d %d\n",a,b,c,d);  
+a=func1(a,b);  
+printf("%d %d %d %d\n",a,b,c,d);  
+d=func2(c);  
+printf("%d %d %d %d\n",a,b,c,d);  
+func3(b);  
+printf("%d %d %d %d\n",a,b,c,d);  
+}  
