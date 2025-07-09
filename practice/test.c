@@ -1,17 +1,19 @@
-#include<stdio.h> 
-#include<string.h> 
-void main() { 
-char data[100] = "Data"; 
-char field[100] = "Science"; 
-int pos; 
-strncpy(data, field, 3); 
-for(pos = 0; data[pos] != '\0'; pos++) 
-data[pos] += 4; 
-strncat(field, data, 2); 
-printf("Data: %s\n", data); 
-field[pos - 1] = '\0'; 
-printf("Field: %s\n", field); 
-for(pos = 2; pos > 0; pos--) 
-strrev(field); 
-printf("Final Output: %s", field); 
+#include <stdio.h> 
+#include <string.h> 
+int main() { 
+char str1[50] = "CS-1010"; 
+char str2[50] = "Introduction to Programming"; 
+int index = strlen(str1) / 2 - 1; 
+for (int k = 0; index + k < strlen(str1); k += 2) { 
+str1[index + k] = str2[k]; 
+} 
+strcat(str1, str2); 
+if (strcmp(str2, str1) > 0) { 
+strncat(str1, " Fun and engaging!", 19); 
+} else { 
+strncat(str2, " Fun and engaging!", 19); 
+} 
+printf("%s\n", str1); 
+printf("%s\n", str2); 
+return 0; 
 } 
