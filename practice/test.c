@@ -1,19 +1,18 @@
 #include <stdio.h> 
 #include <string.h> 
 int main() { 
-char str1[50] = "CS-1010"; 
-char str2[50] = "Introduction to Programming"; 
-int index = strlen(str1) / 2 - 1; 
-for (int k = 0; index + k < strlen(str1); k += 2) { 
-str1[index + k] = str2[k]; 
+char str1[50] = {'\0'}, str2[50] = "EXCELLENCE"; 
+strcpy(str1, "ACHIEVEMENT"); 
+int i = strlen(str1) * 0.5; 
+for(int k = 0; str2[k] != '\0'; ++k) { 
+str1[i + k] = str2[k]; 
 } 
+strrev(str1); 
 strcat(str1, str2); 
-if (strcmp(str2, str1) > 0) { 
-strncat(str1, " Fun and engaging!", 19); 
+if(strcmp(str2, str1) >= 0) { 
+strcpy(str1, "STUDY HARD"); 
 } else { 
-strncat(str2, " Fun and engaging!", 19); 
+strcpy(str2, "NEVER GIVE UP"); 
 } 
-printf("%s\n", str1); 
-printf("%s\n", str2); 
 return 0; 
 } 
