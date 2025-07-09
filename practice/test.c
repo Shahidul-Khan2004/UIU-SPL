@@ -1,25 +1,18 @@
 #include<stdio.h>  
-int a,b,c=5,d=2;  
-int func1(int a,int b){  
-c=a+b;  
-return c*2;  
+int x = 2, y = 3;  
+int fun1(int n){  
+return n%11;  
 }  
-int func2(int p){  
-p=p+a;  
-a*=2;  
-return p;  
+void fun2(int arr[], int n){  
+for(int i = 0; i<n; i++){  
+x = fun1(x) + fun1(y);  
+arr[i] = arr[i] + x;  
+y = fun1(y) + fun1(x);  
 }  
-void func3(int d){  
-int c=d+10;  
-b=func2(c);  
 }  
-void main(){  
-a=1;b=3;  
-printf("%d %d %d %d\n",a,b,c,d);  
-a=func1(a,b);  
-printf("%d %d %d %d\n",a,b,c,d);  
-d=func2(c);  
-printf("%d %d %d %d\n",a,b,c,d);  
-func3(b);  
-printf("%d %d %d %d\n",a,b,c,d);  
-}  
+int main(){  
+int a[] = {2, 3, 5, 7, 11};  
+fun2(a, 5);  
+for(int i = 0; i<5; i++)  
+printf("%d ", a[i]);  
+} 
