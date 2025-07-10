@@ -1,20 +1,27 @@
-#include<stdio.h>  
-struct rectangle {
-    int height;
-    int breadth;
+#include <stdio.h>
+
+struct student {
+    char name[128];
+    int age; float height;
+    float weight; float BMI;
 };
 
 int main (void) {
-    struct rectangle r[3];
-    struct rectangle *p = r;
+    struct student p[100];
     for (int i = 0; i < 3; i++) {
-        scanf("%d", &(p + i)->height);
-        scanf("%d", &(p + i)->breadth);
+        scanf(" %[^\n]", p[i].name);
+        scanf("%d", &p[i].age);
+        scanf("%f", &p[i].height);
+        scanf("%f", &p[i].weight);
+        p[i].BMI = p[i].weight / p[i].height;
     }
-    int area_max = 0;
+    int lowest_age = p[0].age;
+    int low_i = 0;
     for (int i = 0; i < 3; i++) {
-        int area = (p + i)->height * (p + i)->breadth;
-        if (area > area_max) area_max = area;
+        if (p[i].age < lowest_age) {
+            lowest_age = p[i].age;
+            low_i = i;
+        }
     }
-    printf("%d ", area_max);
+    printf("%s\n%d\n%f\n%f\n%f\n", p[low_i].name, p[low_i].age, p[low_i].height, p[low_i].weight, p[low_i].BMI);
 }
